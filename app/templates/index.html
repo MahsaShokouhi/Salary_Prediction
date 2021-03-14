@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Salary Prediction</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	</head>
+		
+	<body>
+		<div class="jumbotron text-center">
+			<h1>Salary Prediction for Job Postings</h1>
+  			<p>Estimate salary for a new vacancy</p>
+  			<BR><BR>
+  			<h3>Enter Job Specification</h3><BR>
+				<form action="/predict" method="post">
+
+            		<label for="jobType">Job Type:</label>
+            		<select name="jobType" id="jobType">
+						<option value="CTO">CTO</option>
+						<option value="CFO">CFO</option>
+						<option value="CEO">CEO</option>
+						<option value="VICE PRESIDENT">VICE PRESIDENT</option>
+						<option value="MANAGER">MANAGER</option>
+						<option value="SENIOR">SENIOR</option>
+						<option value="JUNIOR">JUNIOR</option>
+						<option value="JANITOR">JANITOR</option>
+					</select>
+
+					<label for="degree">Degree:</label>
+					<select name="degree" id="degree">
+						<option value="DOCTORAL">DOCTORAL</option>
+						<option value="MASTERS">MASTERS</option>
+						<option value="BACHELORS">BACHELORS</option>
+						<option value="HIGH_SCHOOL">HIGH_SCHOOL</option>
+						<option value="NONE">NONE</option>
+					</select>
+
+					<label for="major">Major:</label>
+					<select name="major" id="major">
+						<option value="ENGINEERING">ENGINEERING</option>
+						<option value="BUSINESS"">BUSINESS</option>
+						<option value="PHYSICS">PHYSICS</option>
+						<option value="COMPSCI">COMPSCI</option>
+						<option value="BIOLOGY">BIOLOGY</option>
+						<option value="CHEMISTRY">CHEMISTRY</option>
+						<option value="MATH">MATH</option>
+						<option value="LITERATURE"">LITERATURE</option>
+						<option value="NONE">NONE</option>
+					</select>
+
+					<label for="industry">Industry:</label>
+					<select name="industry" id="industry">
+						<option value="OIL">OIL</option>
+						<option value="FINANCE">FINANCE</option>
+						<option value="WEB">WEB</option>
+						<option value="HEALTH">HEALTH</option>
+						<option value="AUTO">AUTO</option>
+						<option value="SERVICE">SERVICE</option>
+						<option value="EDUCATION">EDUCATION</option>
+					</select>
+
+                	<BR>
+                	<label for="yearsExperience">Years Experience</label>
+                	<input type="text" class="form-group col-lg-5" name="yearsExperience" ><BR>
+                	
+                	<label for="milesFromMetropolis">Distance From a Metropolitan Area (Miles)</label>
+                	<input type="text" class="form-group col-lg-4" name="milesFromMetropolis"><BR>
+
+                	<input type="submit" value="Predict Salary" class="btn-lg">	
+                	
+				</form>
+				<BR><BR><BR>
+				
+			{% block prediction %}
+			{% endblock %}
+		</div>
+		     
+		<div class="container">
+			<h2 class="text-center">Overview of the Salary Prediction Dataset</h2>
+			<BR><BR>
+			<h4>Average Salary for Each Industry and Role</h4>
+			<p>Across all positions, employees working in “Oil” and “Finance” Industries earn highest salaries, followed by “Web”, “Healthcare”, “Auto”, “Service”, and “Education” industries.</p>
+			<figure class="text-center">
+				<img src="{{url_for('static', filename='fig1.png')}}">
+				<figcaption class="figure-caption">Average salary (thousands of dollars) </figcaption>
+			</figure>
+			<BR><BR>
+			<h4>Average Salary for Each Major and Role</h4>
+			<p>Employees with “Engineering”, “Business”, and “Math” majors earn highest salaries.</p>
+			<figure class="text-center">
+				<img src="{{url_for('static', filename='fig2.png')}}">
+				<figcaption class="figure-caption">Average salary (thousands of dollars) </figcaption>
+			</figure>
+			<BR><BR>
+			<h4>Relative Importance of Factors in Salary Estimation</h4>
+			<p>Job-type (role) is the most important factor in salary prediction, followed by “years of experience”, “miles from metropolis”, “industry”, “major”, and “degree”.</p>
+			<figure class="text-center">
+				<img src="{{url_for('static', filename='fig3.png')}}">
+			</figure>				
+		</div>
+	</body>
+</html>

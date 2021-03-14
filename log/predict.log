@@ -1,0 +1,2 @@
+2021-03-11 10:06:26,474 - INFO - utils - Load processed test data and trained model
+2021-03-11 10:06:28,935 - INFO - utils - Make prediction and save precistions as ./data/predict/predictions.csv

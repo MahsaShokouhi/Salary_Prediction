@@ -1,0 +1,10 @@
+2021-03-10 21:57:38,806 - INFO - utils - Load clean data
+2021-03-10 21:57:39,725 - INFO - utils - Build and compare models
+2021-03-11 03:24:47,501 - INFO - utils - Model: baseline
+2021-03-11 03:24:47,510 - INFO - utils - Mean Squared Error = 1499.02 , Standard deviation = 4.37
+2021-03-11 03:24:47,510 - INFO - utils - Model: linear regression
+2021-03-11 03:24:47,511 - INFO - utils - Mean Squared Error = 384.41 , Standard deviation = 1.78
+2021-03-11 03:24:47,511 - INFO - utils - Model: inear regression with interaction
+2021-03-11 03:24:47,511 - INFO - utils - Mean Squared Error = 367.13 , Standard deviation = 1.47
+2021-03-11 03:24:47,511 - INFO - utils - Model: random forest
+2021-03-11 03:24:47,511 - INFO - utils - Mean Squared Error = 370.29 , Standard deviation = 1.57

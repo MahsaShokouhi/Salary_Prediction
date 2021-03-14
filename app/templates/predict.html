@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>		
+	<body>
+	{% extends "index.html" %}
+	{% block prediction %}
+	<h2 class="text-white bg-dark">Results</h2><BR><BR>
+	<h4 class="text-center">{{prediction_text}}</h4>
+	<p>Salary was estimated for the position of {{x['jobType']}} at a company from {{x['industry']}} industry located {{x['milesFromMetropolis']}} Miles from a metropolitan area and for a candidate with a {{x['degree']}} degree and major in {{x['major']}} and {{x['yearsExperience']}} years of experience </p>
+	<BR><BR>
+
+	<h3>Understanding Model Prediction</h3>
+	<p>Contribution of each parameter to salary estimation</p>
+	{{ exp|safe }}
+	{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,34 @@
+######
+# etl
+######
+data_dir: ./data/
+# original data
+original_dir: raw/
+train_features: train_features.csv
+target: train_salaries.csv
+test: test_features.csv
+# derived data (data preparation)
+derived_dir: derived/
+train_derived: train.csv
+test_derived: test.csv
+
+#######
+# train
+#######
+model_dir: ./model/
+model_trained: model.pkl
+model_parameters: model.txt
+
+#########
+# predict
+#########
+predictions: ./data/predict/predictions.csv
+
+#########
+# logging
+#########
+log_dir: ./log/
+etl_log: etl.log
+model_selection_log: model_selection.log
+train_log: train.log
+predict_log: predict.log
