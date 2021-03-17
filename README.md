@@ -112,7 +112,9 @@ The app was designed to:
 
 <br>
 
+<kbd>
 ![figure9](/images/fig9.png)
+</kbd>
 
 <br>
 
