@@ -98,6 +98,8 @@ Among all the job specifications,  job-type, years’ experience, company’s di
 ## Prediction on Test Data
 [link to the prediction script](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/scripts/predict.py)
 
+<br>
+
 ## Flask Web App
 The app was designed to:
 - Provide an overview of the training data used to build the model.
@@ -105,7 +107,7 @@ The app was designed to:
 - Predict salary for job specifications and the candidate profile supplied by the user.
 - Provide explanation about the contribution of each factor to the estimated salary and how salary was predicted by the model using SHAP.
 
-*Running the app opens the "index" template:*
+**Running the app opens the "index" template:**
 
 <br>
 
@@ -113,7 +115,7 @@ The app was designed to:
 
 <br>
 
-*After selecting the job specification, the user is directed to the "predict" template. Here's and example:*
+**After selecting the job specification, the user is directed to the "predict" template. Here's and example:**
 
 <br>
 
