@@ -101,6 +101,9 @@ Among all the job specifications,  job-type, years’ experience, company’s di
 <br>
 
 ## Flask Web App
+[link to the app](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/app/app.py)
+
+
 The app was designed to:
 - Provide an overview of the training data used to build the model.
 - Receive job specifications for a single job posting from the user. 
