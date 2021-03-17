@@ -1,11 +1,18 @@
-# Salary_Prediction
-Salary Prediction for the Job Postings
+# Salary Prediction Application
+An Application to Predeict Salary for New Job Postings
 
 ### Table of Contents 
 
-- [Business Problem](#BusinessProblem)
+- [Business Problem](#Business%20Problem)
 - [Objective](#Objective)
 - [Data](#Data)
+- [Data Preprocessing](#Data%20Preprocessing)
+- [Exploratory Data Analysis](#Exploratory%20Data520Analysis)
+- [Models and Evaluation](#Models%20and%20Evaluation)
+- [Error Analysis](#Error%20Analysis)
+- [Feature Importance](#Feature%20Importance)
+- [Prediction on Test Data](#Prediction%20on%20Test%20Data)
+- [Conclusion](#Conclusion)
 
 
 
@@ -88,7 +95,7 @@ Among all the job specifications, job-type was the most important factor in dete
 
 ![figure8](/images/fig8.png)
 
-## Prediction on test set
+## Prediction on Test Data
 [link to the prediction script](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/scripts/predict.py)
 
 ## Conclusion
