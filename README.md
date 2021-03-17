@@ -1,8 +1,7 @@
 # Salary Prediction Application
 An Application to Predeict Salary for New Job Postings
 
-### Table of Contents
-### ===============
+### Table of Contents 
 
 - [Business Problem](#Business-Problem)
 - [Objective](#Objective)
@@ -13,7 +12,7 @@ An Application to Predeict Salary for New Job Postings
 - [Error Analysis](#Error-Analysis)
 - [Feature Importance](#Feature-Importance)
 - [Prediction on Test Data](#Prediction-on-Test-Data)
-- [Conclusion](#Conclusion)
+- [Flask Web App](#Flask-Web-App)
 
 
 
@@ -22,15 +21,16 @@ The main challenge for HR professionals in recruiting new employees is to find t
 
 
 ## Objective
-The goal was to use predictive models on a set of job postings with salaries (train set), find important factors in estimating salary, and examine which model best predicts the salary for any job specification. The best model was then used to predict salaries for a new set of job postings (test set).
+The goal was to build and examine predictive models on a set of job postings with salaries (train set) to find the best model (with smallest error) for salary prediction. The whole pipeline included data preprocessing and regression models, and was designed to make prediction for the test set as well as for a single record. The selected modelling pipeline was then used to predict salary for the test set. Finally, an application was developed to predict salary for the job specifications and the candidate profile supplied by the user.
 
 ## Data
 The train data included salary and the job specifications, each with a unique identifier (jobId), for 1 million job postings. The job specifications were the same for the train and test sets, as listed below:
 #### Categorical Features and Levels:
-* Degree: DOCTORAL, MASTERS, BACHELORS, HIGH_SCHOOL, NONE
-* Job-type: CEO, CFO, CTO, VICE-PRESIDENT, MANAGER, SENIOR, JUNIOR, JANITOR
-*	Industry: HEALTH, WEB, AUTO, FINANCE, OIL, SERVICE, EDUCATION
+*	Degree: DOCTORAL, MASTERS, BACHELORS, HIGH_SCHOOL, NONE
 *	Major: MATH, PHYSICS, CHEMISTRY, ENGINEERING, BUSINESS, COMPUTER SCIENCE, LITERATURE, BIOLOGY, NONE
+*	Job-type: CEO, CFO, CTO, VICE-PRESIDENT, MANAGER, SENIOR, JUNIOR, JANITOR
+*	Industry: HEALTH, WEB, AUTO, FINANCE, OIL, SERVICE, EDUCATION
+
 #### Numerical Features:
 *	Years’ Experience
 *	Miles from Metropolis
@@ -44,10 +44,9 @@ The train data included salary and the job specifications, each with a unique id
 *	Only 5 rows were removed from the train set after data cleaning.
 *	Finally categorical variables were transfromed using one-hot encoding.
 
-[see the log file for data processing](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/log/etl.log)
 
 ## Exploratory Data Analysis
-*	The target variable (salary) was not skewed; hence no transformation was required.
+* The target variable (salary) was not skewed; hence no transformation was required.
 
 ![figure1](/images/fig1.png)
 
@@ -69,7 +68,7 @@ The train data included salary and the job specifications, each with a unique id
 
 For comparison, and to establish a baseline, a simple model (dummy regressor) was created that predicted the average salary for all job postings.
 
-To build and evaluate models, a range of linear and tree-based models were examined. For each model, mean squared error (MSE) was averaged across 5-fold cross-validation.
+To build and evaluate models, linear and non-linear models were examined. For each model, mean squared error (MSE) was averaged across 5-fold cross-validation.
 
 The results and MSE for each model is listed below ([see the log file for model selection](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/log/model_selection.log)):
 
@@ -92,12 +91,23 @@ A closer look at the distribution of the actual and predicted salaries on the tr
 ![figure7](/images/fig7.png)
 
 ## Feature Importance
-Among all the job specifications, job-type was the most important factor in determining the salary, followed by “years of experience”, “miles from metropolis”, “industry”, and “major”.
+Among all the job specifications,  job-type, years’ experience, company’s distance from a major city (miles from metropolis), and the industry are the main factor in determining the salary.
 
 ![figure8](/images/fig8.png)
 
 ## Prediction on Test Data
 [link to the prediction script](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/scripts/predict.py)
 
-## Conclusion
-To summarize, job-type, years’ experience, company’s distance from a major city (miles from metropolis), and the company’s industry are the main factor in determining the salary. However, each of these factors should not be considered in isolation, as the interaction between them is also important in determining the appropriate salary.
+## Flask Web App
+The app was designed to:
+- Provide an overview of the training data used to build the model.
+- Receive job specifications for a single job posting from the user. 
+- Predict salary for job specifications and the candidate profile supplied by the user.
+- Provide explanation about the contribution of each factor to the estimated salary and how salary was predicted by the model using SHAP.
+Running the app opens the "index" template:
+
+![figure9](/images/fig9.png)
+
+After selecting the job specification, the user is directed to the "predict" template. Here's and example:
+
+![figure10](/images/fig10.png)
