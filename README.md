@@ -107,7 +107,7 @@ The app was designed to:
 - Predict salary for job specifications and the candidate profile supplied by the user.
 - Provide explanation about the contribution of each factor to the estimated salary and how salary was predicted by the model using SHAP.
 
-### <mark>Running the app opens the "index" template:</mark>
+<mark>Running the app opens the "index" template:</mark>
 
 <br>
 
