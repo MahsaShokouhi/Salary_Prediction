@@ -107,9 +107,9 @@ The app was designed to:
 - Predict salary for job specifications and the candidate profile supplied by the user.
 - Provide explanation about the contribution of each factor to the estimated salary and how salary was predicted by the model using SHAP.
 
-### ==========================================
+
 ### Running the app opens the "index" template:
-### ==========================================
+==========================================
 
 <br>
 
@@ -117,9 +117,9 @@ The app was designed to:
 
 <br>
 
-============================================================
+
 ### After selecting the job specification, the user is directed to the "predict" template. Here's an example:
-============================================================
+===================================================================
 
 <br>
 
