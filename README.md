@@ -109,7 +109,6 @@ The app was designed to:
 
 
 ### Running the app opens the "index" template:
-==========================================
 
 <br>
 
@@ -117,9 +116,9 @@ The app was designed to:
 
 <br>
 
-
+-----------------------------------------------------------------------
 ### After selecting the job specification, the user is directed to the "predict" template. Here's an example:
-===================================================================
+
 
 <br>
 
