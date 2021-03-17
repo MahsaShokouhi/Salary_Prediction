@@ -104,10 +104,17 @@ The app was designed to:
 - Receive job specifications for a single job posting from the user. 
 - Predict salary for job specifications and the candidate profile supplied by the user.
 - Provide explanation about the contribution of each factor to the estimated salary and how salary was predicted by the model using SHAP.
-Running the app opens the "index" template:
+
+*Running the app opens the "index" template:*
+
+<br>
 
 ![figure9](/images/fig9.png)
 
-After selecting the job specification, the user is directed to the "predict" template. Here's and example:
+<br>
+
+*After selecting the job specification, the user is directed to the "predict" template. Here's and example:*
+
+<br>
 
 ![figure10](/images/fig10.png)
