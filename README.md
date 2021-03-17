@@ -10,7 +10,7 @@ An Application to Predeict Salary for New Job Postings
 - [Exploratory Data Analysis](#Exploratory%20Data520Analysis)
 - [Models and Evaluation](#Models%20and%20Evaluation)
 - [Error Analysis](#Error%20Analysis)
-- [Feature Importance](#Feature Importance)
+- [Feature Importance](<a name="Feature Importance"/>)
 - [Prediction on Test Data](#Prediction%20on%20Test%20Data)
 - [Conclusion](#Conclusion)
 
