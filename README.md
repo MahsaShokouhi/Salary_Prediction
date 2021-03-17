@@ -1,17 +1,18 @@
 # Salary Prediction Application
 An Application to Predeict Salary for New Job Postings
 
-### Table of Contents 
+### Table of Contents
+### ===============
 
-- [Business Problem](#Business%20Problem)
+- [Business Problem](#Business-Problem)
 - [Objective](#Objective)
 - [Data](#Data)
-- [Data Preprocessing](#Data%20Preprocessing)
-- [Exploratory Data Analysis](#Exploratory%20Data520Analysis)
-- [Models and Evaluation](#Models%20and%20Evaluation)
-- [Error Analysis](#Error%20Analysis)
+- [Data Preprocessing](#Data-Preprocessing)
+- [Exploratory Data Analysis](#Exploratory-Data-Analysis)
+- [Models and Evaluation](#Models-and-Evaluation)
+- [Error Analysis](#Error-Analysis)
 - [Feature Importance](#Feature-Importance)
-- [Prediction on Test Data](#Prediction%20on%20Test%20Data)
+- [Prediction on Test Data](#Prediction-on-Test-Data)
 - [Conclusion](#Conclusion)
 
 
