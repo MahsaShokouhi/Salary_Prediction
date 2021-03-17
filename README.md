@@ -1,6 +1,9 @@
 # Salary_Prediction
 Salary Prediction for the Job Postings
 
+### Table of Contents  
+[Business Problem](##Business Problem)  
+
 
 ## Business Problem
 The main challenge for HR professionals in recruiting new employees is to find the suitable candidate with necessary skills. In order to stay competitive, attract the best candidates, and reduce employee turnover and the cost associated with it, it’s important to have an efficient recruitment process in place. An important aspect of effective recruitment is to have a good estimate of the salary for any job specification. However, salary often varies across industries, geographic location, etc., even for the same job specification, making it challenging to estimate.
@@ -61,10 +64,10 @@ Model |	MSE
 ----- | ---
 Baseline Model |	1499
 Linear regression |	384
-Linear regression with interaction | 354
-Random forest	| 375
+Linear regression with interaction | 367
+Random forest	| 370
 
-The best model with lowest MSE was Linear regression with interaction between features which was selected for training ([link to the model training script](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/scripts/train.py)).
+The best models with lowest MSE were Random forest and Linear regression with interaction between features. Random forest was selected for training ([link to the model training script](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/scripts/train.py)).
 
 ## Error Analysis
 A closer look at the distribution of the actual and predicted salaries on the train set shows that overall, prediction was reasonably in line with actual salaries. However, the salaries in the range of 100-150 (approximately) were overestimated by the model, whereas higher salaries were underestimated.
@@ -76,7 +79,7 @@ A closer look at the distribution of the actual and predicted salaries on the tr
 ![figure7](/images/fig7.png)
 
 ## Feature Importance
-Feature importance was estimated with a gradient boosting model. Among all the job specifications, job-type was the most important factor in determining the salary, followed by “years of experience”, “miles from metropolis”, “industry”, and “major”.
+Among all the job specifications, job-type was the most important factor in determining the salary, followed by “years of experience”, “miles from metropolis”, “industry”, and “major”.
 
 ![figure8](/images/fig8.png)
 

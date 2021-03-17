@@ -16,7 +16,7 @@ test_derived: test.csv
 # train
 #######
 model_dir: ./model/
-model_trained: model.pkl
+model_trained: model.lzma
 model_parameters: model.txt
 
 #########

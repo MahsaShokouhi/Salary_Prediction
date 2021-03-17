@@ -4,8 +4,7 @@
 
 import pandas as pd
 import os
-import pickle
-from sklearn.externals import joblib
+import joblib
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.pipeline import Pipeline
@@ -54,18 +53,6 @@ def train(config_file):
 
     model.fit(x_train, y_train)
     
-     ###################
-    # Add SHAP explainer
-    ################### 
-    
-    def model_predict(data_asarray):
-    data_asframe =  pd.DataFrame(data_asarray, columns=test.columns)
-    return model.predict(data_asframe)
-
-    # shap.initjs()
-    X_train_summary = shap.sample(X_train, 10)
-    explainer = shap.KernelExplainer(model_predict, X_train_summary)
-    
     
     ################
     # Save the model
@@ -75,15 +62,12 @@ def train(config_file):
     model_parameters = os.path.join(model_dir, config['model_parameters'])
     
     logger.info(f'writing the trained model to {model_dir}')
-                
-    pickle.dump(model, open(model_trained, 'wb'))
+    
+    joblib.dump(model, filename=model_trained, compress=('lzma', 6))
 
     with open(model_parameters, 'w') as file:
         file.write(str(model))
 
-    # Save explainer
-    ex_file = os.path.join(model_dir,'explainer.bz2')
-    joblib.dump(explainer, filename=ex_file, compress=('bz2', 9))
     
 if __name__ == '__main__':
     train('scripts/config.yaml')
