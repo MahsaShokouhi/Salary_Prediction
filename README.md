@@ -2,7 +2,7 @@
 Salary Prediction for the Job Postings
 
 ### Table of Contents  
-[Business Problem](##Business Problem)  
+[Heading](#Business Problem)  
 
 
 ## Business Problem
