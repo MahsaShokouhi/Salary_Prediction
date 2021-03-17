@@ -112,15 +112,15 @@ The app was designed to:
 
 <br>
 
-<kbd>
 ![figure9](/images/fig9.png)
-</kbd>
 
 <br>
 
 -----------------------------------------------------------------------
-### After selecting the job specification, the user is directed to the "predict" template. Here's an example:
 
+<br>
+
+### After selecting the job specification, the user is directed to the "predict" template. Here's an example:
 
 <br>
 
