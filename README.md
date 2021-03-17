@@ -9,16 +9,13 @@ Salary Prediction for the Job Postings
 
 
 
-<a name="BusinessProblem"/> 
 ## Business Problem
 The main challenge for HR professionals in recruiting new employees is to find the suitable candidate with necessary skills. In order to stay competitive, attract the best candidates, and reduce employee turnover and the cost associated with it, it’s important to have an efficient recruitment process in place. An important aspect of effective recruitment is to have a good estimate of the salary for any job specification. However, salary often varies across industries, geographic location, etc., even for the same job specification, making it challenging to estimate.
 
 
-<a name="Objective"/>
 ## Objective
 The goal was to use predictive models on a set of job postings with salaries (train set), find important factors in estimating salary, and examine which model best predicts the salary for any job specification. The best model was then used to predict salaries for a new set of job postings (test set).
 
-<a name="Data"/>
 ## Data
 The train data included salary and the job specifications, each with a unique identifier (jobId), for 1 million job postings. The job specifications were the same for the train and test sets, as listed below:
 #### Categorical Features and Levels:
