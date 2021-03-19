@@ -79,21 +79,25 @@ Linear regression |	384
 Linear regression with interaction | 367
 Random forest	| 370
 
-The best models with lowest MSE were Random forest and Linear regression with interaction between features. Random forest was selected for training ([link to the model training script](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/scripts/train.py)).
+The best models with lowest MSE were Random forest and Linear regression with interaction between features. Random forest was selected for training. Here's a sanpshot of the whole modelling pipeline which incorporates preprocessing and the random forest model:
+
+![figure5](/images/fig5.png)
+
+([link to the model training script](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/scripts/train.py)).
 
 ## Error Analysis
 A closer look at the distribution of the actual and predicted salaries on the train set shows that overall, prediction was reasonably in line with actual salaries. However, the salaries in the range of 100-150 (approximately) were overestimated by the model, whereas higher salaries were underestimated.
-
-![figure5](/images/fig5.png)
 
 ![figure6](/images/fig6.png)
 
 ![figure7](/images/fig7.png)
 
+![figure8](/images/fig8.png)
+
 ## Feature Importance
 Among all the job specifications,  job-type, years’ experience, company’s distance from a major city (miles from metropolis), and the industry are the main factor in determining the salary.
 
-![figure8](/images/fig8.png)
+![figure9](/images/fig9.png)
 
 ## Prediction on Test Data
 [link to the prediction script](https://github.com/MahsaShokouhi/Salary_Prediction/blob/master/scripts/predict.py)
@@ -115,7 +119,7 @@ The app was designed to:
 
 <br>
 
-![figure9](/images/fig9.png)
+![figure10](/images/fig10.png)
 
 <br>
 
@@ -127,4 +131,4 @@ The app was designed to:
 
 <br>
 
-![figure10](/images/fig10.png)
+![figure11](/images/fig11.png)

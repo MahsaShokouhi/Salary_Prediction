@@ -5,7 +5,7 @@
 import pandas as pd
 import numpy as np
 import os
-import pickle
+import joblib
 
 from utils import load_config, create_log
 
@@ -28,7 +28,7 @@ def predict(config_file):
 
     model_dir = config['model_dir']
     model_trained = os.path.join(model_dir, config['model_trained'])
-    model = pickle.load(open(model_trained, 'rb'))
+    model = joblib.load(model_trained)
 
     ######################################
     # Predict and save predictions

@@ -8,32 +8,34 @@ import yaml
 import logging
 
 from sklearn.preprocessing import (StandardScaler,
-                                   PolynomialFeatures, 
+                                   PolynomialFeatures,
                                    OneHotEncoder)
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.decomposition import PCA
 from sklearn.compose import ColumnTransformer
+
+
 # from sklearn.preprocessing import LabelEncoder
 
 
 def load_config(config_name):
-    '''Load the config file containing all the configurations'''
+    """Load the config file containing all the configurations"""
     with open(config_name, 'r') as file:
         config = yaml.safe_load(file)
     return config
 
 
 def clean_data(df):
-    '''Remove duplicates rows and redundant columns'''
+    """Remove duplicates rows and redundant columns"""
     df.drop(['companyId'], axis=1, inplace=True)
     df.drop_duplicates(subset='jobId', inplace=True)  # remove duplicates
     df.drop(['jobId'], axis=1, inplace=True)
 
 
 def preprocessor(numeric_cols, categorical_cols, interaction_term=True):
-    '''Create a preprocessing pipeline'''
+    """Create a preprocessing pipeline"""
     # Process categorical and numerical features separately
 
     # Define different transformations for categorical and numerical features
@@ -42,7 +44,7 @@ def preprocessor(numeric_cols, categorical_cols, interaction_term=True):
     if interaction_term:
         numeric_trans.append(
             ('interaction', PolynomialFeatures(interaction_only=True)))
-    numeric_trans.append(('pca', PCA()))  
+    numeric_trans.append(('pca', PCA()))
     numeric_pipe = Pipeline(steps=numeric_trans)
     # One-hot encode categorical features
     categorical_pipe = OneHotEncoder()
@@ -75,19 +77,19 @@ def preprocessor(numeric_cols, categorical_cols, interaction_term=True):
 
 def models_validation(x_train, y_train, models, k_cv=5,
                       score='neg_mean_squared_error'):
-    '''Evaluate and compare models using cross-validation'''
+    """Evaluate and compare models using cross-validation"""
     mse_means = []
     mse_stdevs = []
     for model in models:
         crossval = cross_val_score(
-            model, x_train, y_train, cv=k_cv, scoring=score)        
-        mse_means.append(-1.0*crossval.mean())
+            model, x_train, y_train, cv=k_cv, scoring=score)
+        mse_means.append(-1.0 * crossval.mean())
         mse_stdevs.append(crossval.std())
     return mse_means, mse_stdevs
 
 
 def create_log(log_file=None):
-    '''Create log file for each module'''
+    """Create log file for each module"""
     # Get the log file info
     config = load_config('scripts/config.yaml')
     log_dir = config['log_dir']

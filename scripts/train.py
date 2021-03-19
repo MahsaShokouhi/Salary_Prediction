@@ -71,4 +71,3 @@ def train(config_file):
     
 if __name__ == '__main__':
     train('scripts/config.yaml')
-    
